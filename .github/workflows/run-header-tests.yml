@@ -20,9 +20,9 @@ jobs:
         files: |
           **.h
     - name: Check for header files
+      env:
+        ALL_CHANGED_FILES: ${{ steps.changed-header-files.outputs.all_changed_files }}
       run: |
-        env:
-          ALL_CHANGED_FILES: ${{ steps.changed-header-files.outputs.all_changed_files }}
         for file in ${ALL_CHANGED_FILES}; do
             echo "$file was changed"
           done
