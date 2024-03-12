@@ -11,9 +11,9 @@ set(include_dest "helper/hdr")
 
 message(AnfangList="${MODULE_LIST}")
 
-if("${MODULE_LIST}")
+if(NOT "${MODULE_LIST}")
     list(APPEND ${MODULE_LIST} "can")
-    message("NOT")
+    message(NEINIF)
 endif()
 
 add_subdirectory(helper/src)
