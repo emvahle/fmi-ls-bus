@@ -10,7 +10,7 @@ set(lib_dest "lib")
 set(include_dest "helper/hdr")
 
 message(${CMAKE_BUILD_TYPE})
-if("${CMAKE_BUILD_TYPE}" EQUAL Release)
+if(${CMAKE_BUILD_TYPE} STREQUAL Release)
     list(APPEND MODULE_LIST can)    
 endif()
 
