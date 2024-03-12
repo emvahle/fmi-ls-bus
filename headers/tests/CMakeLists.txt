@@ -9,7 +9,7 @@ set(tool_dest "bin")
 set(lib_dest "lib")
 set(include_dest "helper/hdr")
 
-if(${CMAKE_BUILD_TYPE} EQUAL "Release")
+if("${CMAKE_BUILD_TYPE}" EQUAL "Release")
     list(APPEND MODULE_LIST can)    
 endif()
 
