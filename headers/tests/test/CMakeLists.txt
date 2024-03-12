@@ -1,5 +1,5 @@
 set(test_modules ${MODULE_LIST})
-
+message(List="${MODULE_LIST}")
 add_executable(${PROJECT_NAME}.test RunTests.cpp)
 
 foreach(module IN LISTS test_modules)
