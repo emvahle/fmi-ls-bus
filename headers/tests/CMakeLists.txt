@@ -11,7 +11,7 @@ set(include_dest "helper/hdr")
 
 message(AnfangList="${MODULE_LIST}")
 
-if(NOT ${MODULE_LIST})
+if("${MODULE_LIST}" EQUAL "")
     list(APPEND ${MODULE_LIST} "can")
     message("NOT")
 endif()
