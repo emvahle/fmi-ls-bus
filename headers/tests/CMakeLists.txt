@@ -16,5 +16,7 @@ if(NOT "${MODULE_LIST}")
     message(NEINIF)
 endif()
 
+message(DanachList="${MODULE_LIST}")
+
 add_subdirectory(helper/src)
 add_subdirectory(test)
