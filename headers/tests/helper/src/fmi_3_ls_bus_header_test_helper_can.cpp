@@ -38,7 +38,7 @@ void CheckCanTransmitOperation(long long int id, int ide, int rtr, int dataSize,
 
 		EXPECT_EQ(operation->id, id * multiplier);
 		EXPECT_EQ(operation->ide, ide * multiplier);
-		EXPECT_EQ(operation->rtr, 4);
+		EXPECT_EQ(operation->rtr, rtr * multiplier);
 		EXPECT_EQ(operation->dataLength, dataSize);
 		for (int i = 0; i < dataSize; i++)
 		{
