@@ -32,7 +32,7 @@ jobs:
     name: Test changed header files
     if: needs.header-file-collector.outputs.any-header-files == 'true'
     outputs:
-      test-fail: ${{ steps.test-header-files.outputs.test-fail }}
+      test_fail: ${{ steps.test-header-files.outputs.test_fail }}
     runs-on: ubuntu-latest
 
     steps:
@@ -54,7 +54,7 @@ jobs:
 
       - name: Execute tests
         run: |
-          ctest --output-on-failure >> $test-fail
-          echo ${test-fail}
+          ctest --output-on-failure >> $test_fail
+          echo ${test_fail}
           
         working-directory: ./headers/tests/build
