@@ -54,6 +54,6 @@ jobs:
 
       - name: Execute tests
         run: |
-          echo "test-failure = ctest --output-on-failure" >> $GITHUB_OUTPUT
-          echo "Output: ${test-failure}"
+          echo "test-failure = ctest --output-on-failure" 
+          
         working-directory: ./headers/tests/build
