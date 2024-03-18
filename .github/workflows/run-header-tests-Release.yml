@@ -31,6 +31,8 @@ jobs:
     needs: header-file-collector
     name: Test changed header files
     if: needs.header-file-collector.outputs.any-header-files == 'true'
+    outputs:
+      test-failure: ${{ steps.test-header-files.outputs.test-failure }}
     runs-on: ubuntu-latest
 
     steps:
@@ -52,5 +54,6 @@ jobs:
 
       - name: Execute tests
         run: |
-          ctest
+          echo "test-failure = ctest --output-on-failure" >> $GITHUB_OUTPUT
+          echo "Output: ${test-failure}"
         working-directory: ./headers/tests/build
