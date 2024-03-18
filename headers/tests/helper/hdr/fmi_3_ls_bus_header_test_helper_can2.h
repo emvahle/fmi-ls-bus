@@ -25,7 +25,5 @@ enum Operation2 { CanTransmit2, CanFdTransmit2, CanXlTransmit2, Confirm2, Config
  * \param[in] data        The data of the CAN Transmit operation.
  * \param[in] correctData Indicator if the method checks for a match of provided and created values or for an overflow of values.
  */
-void CheckCanTransmitOperation2(long long int id, int ide, int rtr, fmi3UInt8 data[], bool correctData);
-
-std::string sayHello2();
+void CheckCanTransmitOperation2(long long int id, int ide, int rtr, int dataSize, fmi3UInt8 data[], bool correctData);
 
