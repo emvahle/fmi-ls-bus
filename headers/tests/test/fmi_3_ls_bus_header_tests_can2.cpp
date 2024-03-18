@@ -18,7 +18,7 @@
 TEST(Fmi3LsBusCanTransmit2, minValues2) {
 
 	fmi3UInt8 data[] = { 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D' };
-	CheckCanTransmitOperation2(0, 0, 0, data, true);
+	CheckCanTransmitOperation2(0, 0, 0, sizeof(data), data, true);
 }
 
 
@@ -28,7 +28,7 @@ TEST(Fmi3LsBusCanTransmit2, minValues2) {
 TEST(Fmi3LsBusCanTransmit2, maxValues2) {
 
 	fmi3UInt8 data[] = { 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D' };
-	CheckCanTransmitOperation2(UINT32_MAX, UINT8_MAX, UINT8_MAX, data, true);
+	CheckCanTransmitOperation2(UINT32_MAX, UINT8_MAX, UINT8_MAX, sizeof(data), data, true);
 }
 
 /**
@@ -37,5 +37,5 @@ TEST(Fmi3LsBusCanTransmit2, maxValues2) {
 TEST(Fmi3LsBusCanTransmit2, wrongValues2) {
 
 	fmi3UInt8 data[] = { 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D' };
-	CheckCanTransmitOperation2(WRONG_U_INT322, WRONG_U_INT82, WRONG_U_INT82, data, false);
+	CheckCanTransmitOperation2(WRONG_U_INT322, WRONG_U_INT82, WRONG_U_INT82, sizeof(data), data, false);
 }
