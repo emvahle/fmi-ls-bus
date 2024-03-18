@@ -54,6 +54,7 @@ jobs:
 
       - name: Execute tests
         run: |
-          echo "test-failure = ctest --output-on-failure" 
+          test-failure = ctest --output-on-failure
+          echo ${test-failure}
           
         working-directory: ./headers/tests/build
