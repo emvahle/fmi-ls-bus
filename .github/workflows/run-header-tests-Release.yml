@@ -54,6 +54,6 @@ jobs:
 
       - name: Execute tests
         run: |
-          ctest --output-on-failure
+          ctest
           
         working-directory: ./headers/tests/build
