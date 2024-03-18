@@ -31,8 +31,6 @@ jobs:
     needs: header-file-collector
     name: Test changed header files
     if: needs.header-file-collector.outputs.any-header-files == 'true'
-    outputs:
-      test_fail: ${{ steps.test-header-files.outputs.test_fail }}
     runs-on: ubuntu-latest
 
     steps:
