@@ -33,7 +33,6 @@ jobs:
       with:
         repository: modelica/fmi-standard
         ref: refs/heads/main
-        path: fmi-standard
 
     - name: Copy PlatformTypes.h
       run: |
