@@ -29,7 +29,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Checkout fmi-standard Repository
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
       run: |
         cp $GITHUB_WORKSPACE/fmi-standard/headers/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
       with:
