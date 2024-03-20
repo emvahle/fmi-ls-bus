@@ -31,7 +31,7 @@ jobs:
     - name: Checkout fmi-standard Repository
       uses: actions/checkout@v4
       with:
-        name: modelica/fmi-standard
+        repository: modelica/fmi-standard
         ref: refs/heads/release
         sparse-checkout: headers/fmi3PlatformTypes.h
         sparse-checkout-cone-mode: false
