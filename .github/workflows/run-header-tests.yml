@@ -10,7 +10,6 @@ on:
 
   pull_request:
     branches:
-      - integrationtests-for-ls-bus-header
       - main
     paths:
       - 'headers/**'
