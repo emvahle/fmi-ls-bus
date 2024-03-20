@@ -8,6 +8,14 @@ on:
         required: false
         description: Specify the modules you want to run tests for seperated by semicolons. Available is 'can'. Example':' 'can' (case sensitive).
 
+  pull_request:
+    branches:
+      - integrationtests-for-ls-bus-header
+      - main
+    paths:
+      - 'headers/**'
+      - 'tests/**'
+
 jobs:
   test-header-files:
     name: Test module header files
