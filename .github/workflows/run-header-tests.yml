@@ -36,7 +36,7 @@ jobs:
 
     - name: Copy PlatformTypes.h
       run: |
-        cp home/runner/work/fmi-ls-bus/fmi-ls-bus/fmi-standard/headers/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
+        cp /home/runner/work/fmi-ls-bus/fmi-ls-bus/fmi-standard/headers/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
 
     - name: Configure
       run: |
