@@ -30,7 +30,7 @@ jobs:
 
     - name: Checkout fmi-standard Repository
       uses: actions/checkout@v4
-      run: |
+    - run: |
         cp $GITHUB_WORKSPACE/fmi-standard/headers/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
       with:
         repository: modelica/fmi-standard
