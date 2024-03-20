@@ -6,8 +6,12 @@ on:
       modules:
         type: string
         required: false
-        default: can
         description: Specify the modules you want to run tests for seperated by semicolons. Available is 'can'. Example':' 'can' (case sensitive).
+
+  pull_request:
+    branches: [ integrationtests-for-ls-bus ]
+    paths:
+      - 'headers/**'
 
 jobs:
   test-header-files:
