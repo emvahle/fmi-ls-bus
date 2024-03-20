@@ -28,6 +28,18 @@ jobs:
         sudo apt-get install libgtest-dev
     - uses: actions/checkout@v1
 
+    - name: Copy PlatformTypes.h
+      run: |
+        cp ${{GITHUB_WORKSPACE}}/fmi-standard/headers/fmi3PlatformTypes.h ${{GITHUB_WORKSPACE}}/headers
+    - uses: actions/checkout@v4
+      with:
+        name: modelica/fmi-standard
+        ref: refs/heads/release
+        sparse-checkout: |
+          headers/fmi3PlatformTypes.h
+        sparse-checkout-cone-mode: false
+        path: fmi-standard
+
     - name: Configure
       run: |
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DMODULE_LIST="${{inputs.modules}}" ..
