@@ -29,14 +29,14 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Checkout fmi-standard Repository
-      run: ls -R
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
       with:
         repository: modelica/fmi-standard
         ref: refs/heads/main
 
     - name: Copy PlatformTypes.h
       run: |
+        ls -R
         cp /home/runner/work/fmi-ls-bus/fmi-ls-bus/modelica/fmi-standard/headers/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
 
     - name: Configure
