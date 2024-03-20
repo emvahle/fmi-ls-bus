@@ -34,13 +34,13 @@ jobs:
         repository: modelica/fmi-standard
         ref: refs/heads/main
         path: fmi-standard
-        sparse-checkout: fmi3PlatformTypes.h
+        sparse-checkout: headers/fmi3PlatformTypes.h
         sparse-checkout-cone-mode: false
 
     - name: Copy PlatformTypes.h
       run: |
         ls -R
-        cp /home/runner/work/fmi-ls-bus/fmi-ls-bus/modelica/fmi-standard/headers/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
+        cp $GITHUB_WORKSPACE/fmi-standard/headers/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
 
     - name: Configure
       run: |
