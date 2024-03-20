@@ -34,6 +34,8 @@ jobs:
         repository: modelica/fmi-standard
         ref: refs/heads/main
         path: fmi-standard
+        sparse-checkout: headers/fmi3PlatformTypes.h
+        sparse-checkout-cone-mode: false
 
     - name: Copy PlatformTypes.h
       run: |
