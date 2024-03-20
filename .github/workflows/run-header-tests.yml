@@ -32,7 +32,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: modelica/fmi-standard
-        ref: refs/heads/release
+        ref: refs/heads/main
         sparse-checkout: headers/fmi3PlatformTypes.h
         sparse-checkout-cone-mode: false
         path: fmi-standard
