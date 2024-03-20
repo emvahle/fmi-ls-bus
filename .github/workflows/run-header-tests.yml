@@ -28,9 +28,7 @@ jobs:
         sudo apt-get install libgtest-dev
     - uses: actions/checkout@v1
 
-    - name: Copy PlatformTypes.h
-      run: |
-        cp home/runner/work/fmi-ls-bus/fmi-ls-bus/fmi-standard/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
+    - name: Checkout fmi-standard Repository
     - uses: actions/checkout@v4
       with:
         name: modelica/fmi-standard
@@ -39,6 +37,10 @@ jobs:
           headers/fmi3PlatformTypes.h
         sparse-checkout-cone-mode: false
         path: fmi-standard
+
+    - name: Copy PlatformTypes.h
+      run: |
+        cp home/runner/work/fmi-ls-bus/fmi-ls-bus/fmi-standard/fmi3PlatformTypes.h $GITHUB_WORKSPACE/headers
 
     - name: Configure
       run: |
