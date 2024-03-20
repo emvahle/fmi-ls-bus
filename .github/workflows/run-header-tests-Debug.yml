@@ -27,6 +27,7 @@ jobs:
 
     - name: Configure
       run: |
+        echo "Inputs are:${{inputs.modules.}}"
         cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DMODULE_LIST="${{inputs.modules}}" ..
       working-directory: ./headers/tests
 
