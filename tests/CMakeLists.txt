@@ -1,11 +1,9 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(fmi_3_ls_bus_header_test)
 
-message(Liste: "${MODULE_LIST}")
 if("${MODULE_LIST}" STREQUAL "all")
   list(REMOVE_ITEM MODULE_LIST all)
   list(APPEND MODULE_LIST can)
-  message(inside if)
 endif()
 
 set(CMAKE_CXX_STANDARD 17)
