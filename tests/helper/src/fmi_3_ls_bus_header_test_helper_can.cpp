@@ -466,7 +466,7 @@ void CheckFormatErrorOperation(Operation operationType)
 		case Wakeup:
 			FMI3_LS_BUS_CAN_CREATE_OP_WAKEUP(&thirdBufferInfo);
 			break;
-		case default:
+		default:
 			FAIL() << "Unsupported operation type.";
 		}
 
