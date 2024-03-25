@@ -6,7 +6,7 @@
 #pragma warning(disable : 4244)
 #endif
 
-void CheckCanTransmitOperation(long long int id, int ide, int rtr, int dataSize, fmi3UInt8 data[], bool correctData)
+void CheckCanTransmitOperation(long long int id, int ide, int rtr, size_t dataSize, fmi3UInt8 data[], bool correctData)
 	{
 		// Create data needed for creation.
 		fmi3LsBusUtilBufferInfo firstBufferInfo;
@@ -40,14 +40,14 @@ void CheckCanTransmitOperation(long long int id, int ide, int rtr, int dataSize,
 		EXPECT_EQ(operation->ide, ide * multiplier);
 		EXPECT_EQ(operation->rtr, rtr * multiplier);
 		EXPECT_EQ(operation->dataLength, dataSize);
-		for (int i = 0; i < dataSize; i++)
+		for (size_t i = 0; i < dataSize; i++)
 		{
 			EXPECT_EQ(operation->data[i], data[i]);
 		}
 	}
 
 
-void CheckCanFdTransmitOperation(long long int id, int ide, int brs, int esi, int dataSize, fmi3UInt8 data[], bool correctData)
+void CheckCanFdTransmitOperation(long long int id, int ide, int brs, int esi, size_t dataSize, fmi3UInt8 data[], bool correctData)
 	{
 		// Create data needed for creation.
 		fmi3LsBusUtilBufferInfo firstBufferInfo;
@@ -81,13 +81,13 @@ void CheckCanFdTransmitOperation(long long int id, int ide, int brs, int esi, in
 		EXPECT_EQ(operation->brs, brs * multiplier);
 		EXPECT_EQ(operation->esi, esi * multiplier);
 		EXPECT_EQ(operation->dataLength, dataSize);
-		for (int i = 0; i < dataSize; i++)
+		for (size_t i = 0; i < dataSize; i++)
 		{
 			EXPECT_EQ(operation->data[i], data[i]);
 		}
 	}
 
-void CheckCanXlTransmitOperation(long long int id, int ide, int sec, int sdt, int vcid, long long int af, int dataSize, fmi3UInt8 data[], bool correctData)
+void CheckCanXlTransmitOperation(long long int id, int ide, int sec, int sdt, int vcid, long long int af, size_t dataSize, fmi3UInt8 data[], bool correctData)
 	{
 		// Create data needed for creation.
 		fmi3LsBusUtilBufferInfo firstBufferInfo;
@@ -123,7 +123,7 @@ void CheckCanXlTransmitOperation(long long int id, int ide, int sec, int sdt, in
 		EXPECT_EQ(operation->vcid, vcid * multiplier);
 		EXPECT_EQ(operation->af, af * multiplier);
 		EXPECT_EQ(operation->dataLength, dataSize);
-		for (int i = 0; i < dataSize; i++)
+		for (size_t i = 0; i < dataSize; i++)
 		{
 			EXPECT_EQ(operation->data[i], data[i]);
 		}
@@ -465,6 +465,9 @@ void CheckFormatErrorOperation(Operation operationType)
 			break;
 		case Wakeup:
 			FMI3_LS_BUS_CAN_CREATE_OP_WAKEUP(&thirdBufferInfo);
+			break;
+		case default:
+			FAIL() << "Unsupported operation type.";
 		}
 
 		// Create FormatError operation with previously created operation as data.
@@ -481,7 +484,7 @@ void CheckFormatErrorOperation(Operation operationType)
 		operation = (fmi3LsBusOperationFormatError*)operationHeader;
 
 		EXPECT_EQ(operation->dataLength, sizeof(zxData));
-		for (int i = 0; i < sizeof(data); i++)
+		for (size_t i = 0; i < sizeof(data); i++)
 		{
 			EXPECT_EQ(operation->data[i], zxData[i]);
 		}
